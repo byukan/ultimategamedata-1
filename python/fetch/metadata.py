@@ -1,7 +1,8 @@
 import requests
 
-from secret import TOKEN
-
+# from secret import TOKEN
+token = '63cd3e8c2c3e7fffc502233dc0541305'
+TOKEN = '63cd3e8c2c3e7fffc502233dc0541305'
 
 URL = 'https://api.smash.gg/gql/alpha'
 SMASH_ULTIMATE_ID = 1386

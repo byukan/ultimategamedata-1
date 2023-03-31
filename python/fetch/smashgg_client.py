@@ -140,7 +140,7 @@ class SmashggClient:
                       }
                     }
                 """,
-                "variables": f'{{"eventId": {event_id}, "page": {page}, "perPage": {40} }}',
+                "variables": f'{{"eventId": {event_id}, "page": {page}, "perPage": {30} }}',
             },
             headers={
                 'Authorization': f'Bearer {self.token}',

@@ -12,10 +12,13 @@ import database_client
 
 
 def fetch_tournaments(client, end_timestamp):
-    default_start_timestamp = int(datetime.datetime(2018, 12, 1).timestamp())
+    default_start_timestamp = int(datetime.datetime(2023, 1, 1).timestamp())
 
     while True:
-        start_timestamp = database_client.get_last_event_timestamp() - 100
+        try:
+            start_timestamp = database_client.get_last_event_timestamp() - 100
+        except:
+            start_timestamp = None
         if start_timestamp is None:
             start_timestamp = default_start_timestamp
 
@@ -80,7 +83,7 @@ def main(mode):
     )
 
     if mode == 'events':
-        end_timestamp = int(datetime.datetime(2021, 8, 4).timestamp())
+        end_timestamp = int(datetime.datetime(2023, 4, 1).timestamp())
         fetch_tournaments(client, end_timestamp)
     elif mode == 'games':
         fetch_events(client)

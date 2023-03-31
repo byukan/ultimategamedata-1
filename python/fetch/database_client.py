@@ -5,7 +5,8 @@ def _setup():
     connection = mysql.connector.connect(
         user='root',
         host='127.0.0.1',
-        database='ultimategamedata'
+        database='ultimategamedata',
+        passwd ="jkl;jkl;"
     )
     cursor = connection.cursor()
     return connection, cursor
